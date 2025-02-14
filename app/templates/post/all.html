@@ -26,7 +26,7 @@
             <td>{{ post.student }}</td>
         <td>
             <a href="{{ url_for('post.update', id=post.id) }}" class="btn btn-primary"><span class="fa fa-edit"></span></a>
-{#            <a href="{{ url_for('post.delete', id=post.id) }}" class="btn btn-danger">Удалить</a>#}
+            <a href="{{ url_for('post.delete', id=post.id) }}" class="btn btn-danger"><span class="fa fa-trash"></span></a>
         </td>
         </tr>
         {% endfor %}
