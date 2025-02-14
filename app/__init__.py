@@ -2,7 +2,6 @@ from flask import Flask
 from .extensions import db, migrate
 from .routes.user import user
 from .routes.post import post
-from .routes.main import main
 
 
 def create_app():
@@ -12,7 +11,6 @@ def create_app():
 
     app.register_blueprint(user)
     app.register_blueprint(post)
-    app.register_blueprint(main)
 
     db.init_app(app)
     migrate.init_app(app, db)
