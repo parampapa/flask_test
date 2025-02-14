@@ -1,6 +1,7 @@
 {% extends 'main/base.html' %}
 {% block style %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/blocks/table.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/libs/font-awesome.min.css') }}">
 {% endblock %}
 {% block title %}Темы{% endblock %}
 
@@ -24,7 +25,7 @@
             <td>{{ post.subject }}</td>
             <td>{{ post.student }}</td>
         <td>
-            <a href="{{ url_for('post.update', id=post.id) }}" class="btn btn-primary">Редактировать</a>
+            <a href="{{ url_for('post.update', id=post.id) }}" class="btn btn-primary"><span class="fa fa-edit"></span></a>
 {#            <a href="{{ url_for('post.delete', id=post.id) }}" class="btn btn-danger">Удалить</a>#}
         </td>
         </tr>
