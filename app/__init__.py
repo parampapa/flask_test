@@ -1,5 +1,5 @@
 from flask import Flask
-from .extensions import db, migrate
+from .extensions import db, migrate, bcrypt
 from .routes.user import user
 from .routes.post import post
 
