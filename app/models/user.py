@@ -9,3 +9,4 @@ class User(db.Model):
     login = db.Column(db.String(50))
     password = db.Column(db.String(200))
     date = db.Column(db.DateTime, default=lambda: datetime.now(UTC))  # Новый вариант с UTC
+    avatar = db.Column(db.String(200))

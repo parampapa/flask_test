@@ -5,7 +5,7 @@ from ..extensions import db
 user = Blueprint('user', __name__)
 
 
-@user.route('/user/<name>')
+@user.route('/user/register', methods=['GET', 'POST'])
 def create_user(name):
     user = User(name=name)
     db.session.add(user)
