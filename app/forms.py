@@ -1,7 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileAllowed
-from wtforms.fields.simple import StringField, PasswordField, FileField, \
-    SubmitField
+from wtforms.fields.simple import StringField, PasswordField, FileField
 from wtforms.validators import Length, EqualTo, DataRequired
 
 
@@ -15,4 +14,4 @@ class RegistrationForm(FlaskForm):
         FileAllowed(['jpg', 'jpeg', 'png'],
                     message="Только изображения JPG, JPEG, PNG!")
     ])
-    submit = SubmitField('Зарегистрироваться')
+    submit = StringField('Зарегистрироваться')
