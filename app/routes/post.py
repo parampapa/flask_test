@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, get_flashed_messages
 
 from ..models.post import Post
 from ..extensions import db

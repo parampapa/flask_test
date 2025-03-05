@@ -12,28 +12,40 @@
     src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
 }
 
-/* FONTS FontAwesome */
-/*@font-face {*/
-/*  font-family: 'FontAwesome';*/
-/*  src: url('../fonts/FontAwesome/FontAwesome.otf');*/
-/*}*/
+ FONTS FontAwesome
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome/fa-brands-400.ttf');
+}
 
-/*@font-face {*/
-/*  font-family: 'FontAwesome';*/
-/*  src: url('../fonts/FontAwesome/fontawesome-webfont.eot');*/
-/*}*/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome/fa-brands-400.woff2');
+}
 
-/*@font-face {*/
-/*  font-family: 'FontAwesome';*/
-/*  src: url('../fonts/FontAwesome/fontawesome-webfont.ttf');*/
-/*}*/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome/fa-regular-400.ttf');
+}
 
-/*@font-face {*/
-/*  font-family: 'FontAwesome';*/
-/*  src: url('../fonts/FontAwesome/fontawesome-webfont.woff');*/
-/*}*/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome/fa-regular-400.woff2');
+}
 
-/*@font-face {*/
-/*  font-family: 'FontAwesome';*/
-/*  src: url('../fonts/FontAwesome/fontawesome-webfont.woff2');*/
-/*}*/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome/fa-solid-900.ttf');
+}
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome/fa-solid-900.woff2');
+}
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome/fa-v4compatibility.ttf');
+}
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/FontAwesome/fa-v4compatibility.woff2');
+}

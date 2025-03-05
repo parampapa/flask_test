@@ -5,7 +5,7 @@
 {% block content %}
 
     <form method="post" enctype="multipart/form-data" class="form-control d-flex flex-column gap-2">
-{#            {{ form.csrf_token }}#}
+            {{ form.csrf_token }}
             {{  form.name(class="form-control", placeholder="ФИО") }}
             {{  form.login(class="form-control", placeholder="Логин") }}
             {{ form.avatar(class="form-control", placeholder="Загрузите фото") }}
