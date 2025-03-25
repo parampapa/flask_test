@@ -1,7 +1,10 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired, FileAllowed
-from wtforms.fields.simple import StringField, PasswordField, FileField
-from wtforms.validators import Length, EqualTo, DataRequired
+from wtforms.fields.simple import StringField, PasswordField, FileField, \
+    SubmitField
+from wtforms.validators import Length, EqualTo, DataRequired, ValidationError
+
+from .models.user import User
 
 
 class RegistrationForm(FlaskForm):
@@ -14,4 +17,8 @@ class RegistrationForm(FlaskForm):
         FileAllowed(['jpg', 'jpeg', 'png'],
                     message="Только изображения JPG, JPEG, PNG!")
     ])
-    submit = StringField('Зарегистрироваться')
+    submit = SubmitField('Зарегистрироваться')
+
+    def validate_login(self, login):
+        if User.query.filter_by(login=login.data).first():
+            raise ValidationError('Логин уже занят.')
