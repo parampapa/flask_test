@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask
-from .extensions import db, migrate, bcrypt
+from .extensions import db, migrate, bcrypt, login_manager
 from .routes.user import user
 from .routes.post import post
 from .config import Config
@@ -21,6 +21,11 @@ def create_app():
 
     db.init_app(app)
     migrate.init_app(app, db)
+    login_manager.init_app(app)
+
+    #LOGIN MANAGER
+    login_manager.login_view = 'user.login'
+    login_manager.login_message_category = 'У вас нет доступа сначала авторизуйтесь на сайте'
 
     with app.app_context():
         db.create_all()

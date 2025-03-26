@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request, redirect, get_flashed_messages
+from flask import Blueprint, render_template, request, redirect, \
+    get_flashed_messages
 
 from ..models.post import Post
 from ..extensions import db
@@ -10,7 +11,6 @@ post = Blueprint('post', __name__)
 def all():
     posts = Post.query.order_by(Post.updated_at.desc()).all()
     return render_template('post/all.html', posts=posts)
-
 
 
 @post.route('/post/create', methods=['POST', 'GET'])
@@ -28,7 +28,7 @@ def create():
             return redirect('/')
         except Exception as e:
             print(str(e))
-    else :
+    else:
         return render_template('post/create.html')
 
 
@@ -45,7 +45,7 @@ def update(id):
             return redirect('/')
         except Exception as e:
             print(str(e))
-    else :
+    else:
         return render_template('post/update.html', post=post)
 
 
