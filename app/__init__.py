@@ -26,6 +26,7 @@ def create_app():
     #LOGIN MANAGER
     login_manager.login_view = 'user.login'
     login_manager.login_message_category = 'У вас нет доступа сначала авторизуйтесь на сайте'
+    login_manager.login_message_category = 'info'
 
     with app.app_context():
         db.create_all()

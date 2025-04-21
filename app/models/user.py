@@ -1,5 +1,6 @@
 from datetime import datetime, UTC
 
+from .post import Post
 from ..extensions import db, login_manager
 
 from flask_login import UserMixin
@@ -7,6 +8,7 @@ from flask_login import UserMixin
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
+    posts = db.relationship(Post, backref='author')
     status = db.Column(db.String(50), default='user')
     name = db.Column(db.String(50))
     login = db.Column(db.String(50))

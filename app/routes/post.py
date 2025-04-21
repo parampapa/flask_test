@@ -1,6 +1,9 @@
 from flask import Blueprint, render_template, request, redirect, \
     get_flashed_messages
+from flask_login import login_required, current_user
 
+from ..models.user import User
+from ..forms import StudentForm
 from ..models.post import Post
 from ..extensions import db
 
@@ -14,13 +17,16 @@ def all():
 
 
 @post.route('/post/create', methods=['POST', 'GET'])
+@login_required
 def create():
+    form = StudentForm()
+    form.student.choices = [s.name for s in User.query.filter_by(status='user')]
     if request.method == 'POST':
-        teacher = request.form.get('teacher')
         subject = request.form.get('subject')
         student = request.form.get('student')
 
-        post = Post(teacher=teacher, subject=subject, student=student)
+        student_id = User.query.filter_by(name=student).first().id
+        post = Post(teacher=current_user.id, subject=subject, student=student_id)
 
         try:
             db.session.add(post)
@@ -29,10 +35,11 @@ def create():
         except Exception as e:
             print(str(e))
     else:
-        return render_template('post/create.html')
+        return render_template('post/create.html', form=form)
 
 
 @post.route('/post/<int:id>/update', methods=['POST', 'GET'])
+@login_required
 def update(id):
     post = Post.query.get(id)
     if request.method == 'POST':
@@ -50,6 +57,7 @@ def update(id):
 
 
 @post.route('/post/<int:id>/delete', methods=['POST', 'GET'])
+@login_required
 def delete(id):
     post = Post.query.get(id)
     try:

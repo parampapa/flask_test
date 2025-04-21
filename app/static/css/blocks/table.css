@@ -135,6 +135,11 @@ h2 {
     color: white;
 }
 
+.custom-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
 .custom-table td .btn {
     border-radius: 4px; /* Р—Р°РєСЂСѓРіР»РµРЅРЅС‹Рµ СѓРіР»С‹ */
     width: auto; /* РђРІС‚РѕРјР°С‚РёС‡РµСЃРєР°СЏ С€РёСЂРёРЅР° */
